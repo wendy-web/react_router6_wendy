@@ -59,7 +59,7 @@ function Redirect({to}) {
     }, []);
     return null;
 }
-// 自定义是否已登录的组件
+// 自定义是否已登录的组件 - 路由拦截组件的封装
 function AuthComponent({children}) {
   // 组件中嵌套的子组件 children
   const isLogin = localStorage.getItem('token');
