@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import File from '../views/File';
+import Film from '../views/Film';
 import Cinema from '../views/Cinema';
 import Center from '../views/Center';
 import NotFound from '../views/NotFound';
@@ -8,10 +8,10 @@ import NotFound from '../views/NotFound';
 export default function MRouter() {
   return (
     <Routes>
-        {/* <Route path='/' element={<File></File>} /> */}
+        {/* <Route path='/' element={<Film></Film>} /> */}
         {/* index的默认路由 */}
-        {/* <Route index element={<File></File>} /> */}
-        <Route path='/film' element={<File></File>} />
+        {/* <Route index element={<Film></Film>} /> */}
+        <Route path='/film' element={<Film></Film>} />
         <Route path='/cinema' element={<Cinema></Cinema>} />
         <Route path='/center' element={<Center></Center>} />
 
