@@ -10,6 +10,7 @@ import Comingsoon from '../views/Films/Comingsoon';
 
 import Detail1 from '../views/Detail1';
 import Detail2 from '../views/Detail2';
+import Login from '../views/Login';
 
 
 export default function MRouter() {
@@ -33,7 +34,12 @@ export default function MRouter() {
 
         <Route path='/cinema' element={<Cinema></Cinema>} />
         <Route path='/cinema/search' element={<Search></Search>} />
-        <Route path='/center' element={<Center></Center>} />
+
+        {/* 路由是否重定向的形式 */}
+        <Route path='/center' element={<AuthComponent>
+          <Center></Center>
+        </AuthComponent>} />
+        <Route path='/login' element={<Login></Login>} />
 
         {/* 路由重定向的使用 */}
         {/* 方式一： */}
@@ -52,4 +58,10 @@ function Redirect({to}) {
         navigate(to, {replace: true})
     }, []);
     return null;
+}
+// 自定义是否已登录的组件
+function AuthComponent({children}) {
+  // 组件中嵌套的子组件 children
+  const isLogin = localStorage.getItem('token');
+  return isLogin ? children :<Redirect to='/login' />
 }
