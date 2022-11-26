@@ -8,7 +8,9 @@ import Search from '../views/Search';
 import Nowplaying from '../views/Films/Nowplaying';
 import Comingsoon from '../views/Films/Comingsoon';
 
-import Detail from '../views/Detail';
+import Detail1 from '../views/Detail1';
+import Detail2 from '../views/Detail2';
+
 
 export default function MRouter() {
   return (
@@ -21,7 +23,13 @@ export default function MRouter() {
             <Route path='nowplaying' element={<Nowplaying></Nowplaying>} />
             <Route path='comingsoon' element={<Comingsoon></Comingsoon>} />
         </Route>
-        <Route path='/detail' element={<Detail></Detail>} />
+        {/* 路由的跳转方式一： */}
+        {/* 路由URLSearch的使用：detail?id=0 */}
+        <Route path='/detail1' element={<Detail1></Detail1>} />
+
+        {/* 路由的跳转方式二： */}
+        {/* 动态路由 */}
+        <Route path='/detail2/:myid' element={<Detail2></Detail2>} />
 
         <Route path='/cinema' element={<Cinema></Cinema>} />
         <Route path='/cinema/search' element={<Search></Search>} />

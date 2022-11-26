@@ -17,20 +17,30 @@ export default function Nowplaying() {
   //     console.log(res);
   //     setlist(res.data.data.cinemas)
   //   })
-    setlist([{name:'深圳地区', cinemaId:0}])
+    setlist([{name:'深圳地区0', cinemaId:0},{name:'深圳地区1', cinemaId:1}])
   }, []);
   const navigate = useNavigate();
-  const gotoDetail = (id) =>{
-    navigate(`/detail?id=${id}`);
+  const gotoDetail1 = (id) => {
+    // 路由的跳转方式一：/detai?id=0
+    navigate(`/detail1?id=${id}`);
+  }
+  const gotoDetail2 = (id) => {
+    // 路由的跳转方式二：detail/0,路由需要配置detail/:myid=0
+    navigate(`/detail2/${id}`);
   }
   return (
     <div>
       <ul>
-        {list.map((item) => {
-          return <li key={item.cinemaId} onClick={() => {
-            gotoDetail(item.cinemaId)
-          }}>{item.name}</li>
-        })}
+         <li>
+            点击跳转到detail - URLSearch的跳转：/detail1?id=0
+            <button onClick={() => gotoDetail1(0)}>click</button>
+          </li>
+          <li onClick={() => {
+            gotoDetail2(0)
+          }}>
+            点击跳转到detail - URLSearch的跳转：/detail1?id=0
+            <button onClick={() => gotoDetail2(0)}>click</button>
+          </li>
       </ul>
     </div>
   )

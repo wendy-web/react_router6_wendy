@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-export default function Detail() {
+export default function Detail1() {
+  // 路由跳转方式一：
   const [searchParams, setsearchParams] = useSearchParams();
   // 获取参数
   console.log('获取参数:', searchParams.get('id'))
@@ -13,7 +14,7 @@ export default function Detail() {
       <p>Detail</p>
       <button onClick={() => {
         setsearchParams({id: 2})
-      }}>猜你喜欢的detail，设置detail的id值</button>
+      }}>猜你喜欢的detail，设置detail?id=的id值</button>
     </div>
   )
 }
