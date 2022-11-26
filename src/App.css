@@ -4,4 +4,11 @@
 }
 html, body {
   overflow: hidden;
+  color: #353535;
+}
+a {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
 }

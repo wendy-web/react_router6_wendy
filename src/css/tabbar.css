@@ -1,0 +1,24 @@
+.tabbar_box {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+}
+.tabbar_box li {
+    flex: 1;
+    list-style: none;
+}
+.tabbar_box li a {
+    display: block;
+    text-decoration: none;
+    color: #353535;
+}
+.tabbar_active {
+    background-color: #fff;
+}
